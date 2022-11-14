@@ -1,0 +1,84 @@
+---
+import { Icon } from 'astro-icon';
+
+const items = [
+	[
+		{
+			title: '可移植性',
+			description:
+				'我们的服务范围包括Windows，Linux，甚至Android移动端！攻击完成后我们的病毒将保留在团队，以便您随时使用。',
+			icon: 'tabler:brand-tailwind',
+		},
+		{
+			title: '多方法打击',
+			description:
+				'我们熟练掌握多种攻击方法，如社会工程学，我们并不是只会敲代码。',
+			icon: 'tabler:components',
+		},
+		{
+			title: '最低的价格',
+			description:
+				'我们价格是业内最低的,并且价格弹性。付款方案多样囊括了从比特币到现金等一系列支付方式。',
+			icon: 'tabler:list-check',
+		},
+	],
+	[
+		{
+			title: '服务快速',
+			description:
+				'从下单到服务开始最快仅需10秒。即刻下单，即刻享受我们的服务。',
+			icon: 'tabler:rocket',
+		},
+		{
+			title: '高频率更新',
+			description:
+				'根据您选择的套餐，我们将提供日常的分析建议以及技术更新。',
+			icon: 'tabler:arrows-right-left',
+		},
+		{
+			title: '过程对您完全透明',
+			description:
+				'深入工坊，了解不同的工艺技术，探索Jason团队的独特工艺。',
+			icon: 'tabler:ballon',
+		},
+	],
+];
+---
+
+<section class="scroll-mt-16" id="features">
+	<div class="px-4 py-16 mx-auto max-w-6xl lg:px-8 lg:py-20 bg-primary-50 dark:bg-slate-800">
+		<div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+			<p class="text-base text-primary-600 dark:text-primary-200 font-semibold tracking-wide uppercase">Features</p>
+			<h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
+				What's interesting about <span
+					class="bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-secondary-500 whitespace-nowrap"
+					>Jason Security</span
+				>
+			</h2>
+			<p class="max-w-3xl mx-auto sm:text-center text-xl text-gray-600 dark:text-slate-400">
+				Buy your first virus from Jason's Team.
+			</p>
+		</div>
+		<div class="grid mx-auto space-y-6 md:grid-cols-2 md:space-y-0">
+			{
+				items.map((subitems) => (
+					<div class="space-y-8 sm:px-8">
+						{subitems.map(({ title, description, icon }) => (
+							<div class="flex flex-row max-w-md">
+								<div class="mb-4 mr-4">
+									<div class="flex items-center justify-center w-12 h-12 rounded-full bg-primary-500">
+										{icon && <Icon name={icon} class="w-5 h-5 text-white" />}
+									</div>
+								</div>
+								<div>
+									<h3 class="mb-3 text-xl font-bold">{title}</h3>
+									<p>{description}</p>
+								</div>
+							</div>
+						))}
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>

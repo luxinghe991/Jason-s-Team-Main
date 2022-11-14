@@ -1,0 +1,92 @@
+---
+import { Icon } from 'astro-icon';
+
+const items = [
+	{
+		title: '安全防护',
+		description:
+			'知己知彼，百战不殆。我们能提供病毒定制，当然也能定制防护方案。',
+		icon: 'flat-color-icons:home',
+	},
+	{
+		title: '安全咨询',
+		description:
+			'享受安全指导的最廉价方案。我们承诺我们的专家团队将知无不言。',
+		icon: 'flat-color-icons:faq',
+	},
+	{
+		title: '安全教学',
+		description:
+			'授人以鱼不如授人以渔。我们相信教学才能使顾客长远地处于安全的境地中。',
+		icon: 'flat-color-icons:video-projector',
+	},
+	{
+		title: '网页定制',
+		description:
+			'“你还会做网页啊？”“我不会，但是我有Jason的团队，我只管付钱就好了。”',
+		icon: 'flat-color-icons:mind-map',
+	},
+	{
+		title: '社会工程学攻击',
+		description:
+			'想在安全方案中融入自己的想法？您提供方案，我们负责对方案进行评估与分析。',
+		icon: 'flat-color-icons:binoculars',
+	},
+	{
+		title: '方案设计',
+		description:
+			'人在宿舍躺，方案从天上来。我们将根据您的需求定制一套安全防护方案。',
+		icon: 'flat-color-icons:voice-presentation',
+	},
+	{
+		title: 'VPN服务',
+		description:
+			'获得一台属于自己的海外主机且我们将免费帮您搭建，您可以自由分发您的VPN。',
+		icon: 'flat-color-icons:data-encryption',
+	},
+	{
+		title: '病毒定制',
+		description:
+			'购买后您唯一的顾虑就是怕我们的服务实在太好让您不好意思只付您应付的部分。',
+		icon: 'flat-color-icons:lock',
+	},
+	{
+		title: '破解校园网',
+		description:
+			'针对墨尔文学生量身定制，速度相较VPN更快。轻松解锁抖音，微信。',
+		icon: 'flat-color-icons:broken-link',
+	},
+];
+---
+
+<section class="relative">
+	<div class="absolute inset-0 bg-primary-50 dark:bg-slate-800 pointer-events-none mb-32" aria-hidden="true"></div>
+	<div class="relative max-w-6xl mx-auto px-4 sm:px-6">
+		<div class="py-4 pt-8 sm:py-6 lg:py-8 lg:pt-12">
+			<div class="mb-8 text-center">
+				<p class="text-base text-primary-600 dark:text-primary-200 font-semibold tracking-wide uppercase">Components</p>
+				<h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
+					Our services
+				</h2>
+				<p class="max-w-3xl mx-auto text-center text-xl text-gray-600 dark:text-slate-400">
+					Provides frequently used components for building network.
+				</p>
+			</div>
+			<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start my-12 dark:text-white">
+				{
+					items.map(({ title, description, icon }) => (
+						<div class="relative flex flex-col p-6 bg-white dark:bg-slate-900 rounded shadow-xl hover:shadow-lg transition dark:border dark:border-slate-800">
+							<div class="flex items-center mb-4">
+								<Icon name={icon} class="w-12 h-12" />
+
+								<div class="ml-4 text-xl font-bold">{title}</div>
+							</div>
+							<p class="text-gray-500 dark:text-gray-400 text-md">{description}</p>
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</div>
+</section>
+

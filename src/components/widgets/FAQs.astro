@@ -1,0 +1,65 @@
+---
+import { Icon } from 'astro-icon';
+
+const items = [
+	[
+		{
+			question: '如何定制病毒？',
+			answer: `仅需选择适合自己的配置，并提供目标的一些信息。付款后Jason就会开工。`
+		},
+		{
+			question: '定植后如何把病毒植入？',
+			answer: `如何植入应该是您或者其他专业人员考虑的事情。当然我们也提供高品质的植入服务。`,
+		},
+		{
+			question: "病毒是如何制作出来的？",
+			answer: `Jason's Team安全总监Jason Lu在位于互联网中心Aston House核心位置的工作室构想他的作品。工作室中的工程师们与他一起将他的方案变为现实。`,
+		},
+	],
+	[
+		{
+			question: "定制多了有优惠吗？",
+			answer: `是的。您定制次数达到一定标准甚至可以成为董事会的一员。`,
+		},
+		{
+			question: '我不想定制病毒，我想防病毒，可以找你吗？',
+			answer: `做病毒的人最懂如何防病毒。我们的专家可以根据您的财力和应用场景量身定制一套防卫方案。`,
+		},
+		{
+			question: '我不小心中了自己的病毒怎么办？',
+			answer: `你个蠢驴。`,
+		},
+	],
+];
+---
+
+<div class="px-4 py-16 mx-auto max-w-6xl lg:py-20">
+	<div class="max-w-xl sm:mx-auto lg:max-w-2xl">
+		<div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+			<h2 class="max-w-lg mb-4 text-3xl font-bold leading-none tracking-tight sm:text-4xl md:mx-auto font-heading">
+				Frequently Asked Questions
+			</h2>
+		</div>
+	</div>
+	<div class="max-w-screen-xl sm:mx-auto">
+		<div class="grid grid-cols-1 gap-x-8 gap-y-8 lg:gap-x-16 md:grid-cols-2">
+			{
+				items.map((subitems) => (
+					<div class="space-y-8">
+						{subitems.map(({ question, answer }) => (
+							<div>
+								<p class="mb-4 text-xl font-bold">
+									<Icon name="tabler:arrow-down-right" class="w-7 h-7 text-primary-500 inline-block icon-bold" />
+									{question}
+								</p>
+								{answer.split('\n\n').map((paragraph) => (
+									<p class="text-gray-700 dark:text-gray-400 mb-2" set:html={paragraph} />
+								))}
+							</div>
+						))}
+					</div>
+				))
+			}
+		</div>
+	</div>
+</div>
